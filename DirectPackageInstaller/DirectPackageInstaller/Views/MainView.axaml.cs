@@ -1181,7 +1181,7 @@ namespace DirectPackageInstaller.Views
         {
             InputType = Source.NONE;
 
-            btnLoad.Content = (string.IsNullOrWhiteSpace(Url) && !File.Exists(Url)) ? "Open" : "Load";
+            btnLoad.Content = (string.IsNullOrWhiteSpace(Url) && !File.Exists(Url)) ? "فتح" : "تحميل";
             
             Installer.CurrentFileList = null;
             LastForcedSource = null;
