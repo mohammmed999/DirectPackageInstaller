@@ -6,8 +6,7 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="DirectPackageInstaller.Views.MainView"
              Foreground="White"
-             Background="#171C2C"
-             FontFamily="avares://DirectPackageInstaller/Assets/NotoSansArabic-Regular.ttf#Noto Sans Arabic">
+             Background="#171C2C">
   <Design.DataContext>
     <viewModels:MainViewModel />
   </Design.DataContext>
@@ -24,18 +23,18 @@
         </Grid.ColumnDefinitions>
 
         <Menu Grid.ColumnSpan="2">
-            <MenuItem Header="_Options">
-                <MenuItem Header="_Proxy Downloads" Name="btnProxyDownload">
+            <MenuItem Header="خيارات">
+                <MenuItem Header="التحميل عبر البروكسي" Name="btnProxyDownload">
                     <MenuItem.Icon>
                         <CheckBox BorderThickness="0" IsChecked="{Binding ProxyMode, Mode=TwoWay}"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Segmented Downloads" Name="btnSegmentedDownload" >
+                <MenuItem Header="التحميل المجزأ" Name="btnSegmentedDownload" >
                     <MenuItem.Icon>
                         <CheckBox BorderThickness="0" IsChecked="{Binding SegmentedMode, Mode=TwoWay}"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_CNL Support" Name="btnCNLService" >
+                <MenuItem Header="CNL دعم" Name="btnCNLService" >
                     <MenuItem.Icon>
                         <CheckBox BorderThickness="0" IsChecked="{Binding CNLService, Mode=TwoWay}"/>
                     </MenuItem.Icon>
@@ -45,7 +44,7 @@
                         <CheckBox BorderThickness="0" IsChecked="{Binding DHCPService, Mode=TwoWay}"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_IP Address" Classes="NoChildFocus">
+                <MenuItem Header="IP عنوان" Classes="NoChildFocus">
                     <StackPanel Orientation="Horizontal">
                         <Label Grid.Column="0">PS IP</Label>
                         <TextBox Grid.Column="1" Text="{Binding PS4IP, Mode=TwoWay}"></TextBox>
@@ -55,13 +54,13 @@
                         <TextBox Grid.Column="1" Text="{Binding PCIP, Mode=TwoWay}"></TextBox>
                     </StackPanel>
                 </MenuItem>
-                <MenuItem Header="_Debrids">
+                <MenuItem Header="خدمات Debrid">
                     <MenuItem Header="_AllDebrid" Classes="NoChildFocus">
                         <StackPanel Orientation="Horizontal">
                             <Label Grid.Column="0">API Key</Label>
                             <TextBox Grid.Column="1" Text="{Binding AllDebridApiKey, Mode=TwoWay}" Focusable="True"></TextBox>
                         </StackPanel>
-                        <MenuItem Header="_Enabled" Padding="10,10,0,10" Name="btnAllDebirdEnabled">
+                        <MenuItem Header="تفعيل" Padding="10,10,0,10" Name="btnAllDebirdEnabled">
                             <MenuItem.Icon>
                                 <CheckBox BorderThickness="0" IsChecked="{Binding UseAllDebrid, Mode=TwoWay}"/>
                             </MenuItem.Icon>
@@ -72,7 +71,7 @@
                             <Label Grid.Column="0">API Key</Label>
                             <TextBox Grid.Column="1" Text="{Binding RealDebridApiKey, Mode=TwoWay}"></TextBox>
                         </StackPanel>
-                        <MenuItem Header="_Enabled" Padding="10,10,0,10" Name="btnRealDebirdEnabled">
+                        <MenuItem Header="تفعيل" Padding="10,10,0,10" Name="btnRealDebirdEnabled">
                             <MenuItem.Icon>
                                 <CheckBox BorderThickness="0" IsChecked="{Binding UseRealDebrid, Mode=TwoWay}"/>
                             </MenuItem.Icon>
@@ -83,7 +82,7 @@
                             <TextBlock Text="API Key" VerticalAlignment="Center" Margin="0,0,5,0"/>
                             <TextBox Width="150" Text="{Binding DebridLinkApiKey, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                         </StackPanel>
-                        <MenuItem Header="_Enabled" Padding="10,10,0,10" Name="btnDebirdLinkEnabled">
+                        <MenuItem Header="تفعيل" Padding="10,10,0,10" Name="btnDebirdLinkEnabled">
                             <MenuItem.Icon>
                                 <CheckBox BorderThickness="0" IsChecked="{Binding UseDebridLink, Mode=TwoWay}"/>
                             </MenuItem.Icon>
@@ -91,12 +90,12 @@
                     </MenuItem>
                 </MenuItem>
                 
-                <MenuItem Header="_Restart Server" Name="btnRestartServer"/>
-                <MenuItem Header="_Exit" Name="btnExit"/>
+                <MenuItem Header="إعادة تشغيل السيرفر" Name="btnRestartServer"/>
+                <MenuItem Header="خروج|تم تعريب التطبيق من قبل/n فريق 4GAMER" Name="btnExit"/>
             </MenuItem>
-            <MenuItem Header="Packages" IsVisible="False" Name="PackagesMenu">
+            <MenuItem Header="بكجات" IsVisible="False" Name="PackagesMenu">
                 <Separator></Separator>
-                <MenuItem Header="Install _All" Name="btnInstallAll"></MenuItem>
+                <MenuItem Header="تنزيل الكل" Name="btnInstallAll"></MenuItem>
             </MenuItem>
         </Menu>
 
@@ -108,7 +107,7 @@
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5,0,0,0">URL:</Label>
             <TextBox Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding CurrentURL, Mode=TwoWay}" Name="tbURL"></TextBox>
-            <Button Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Margin="5,0,5,0" Name="btnLoad">فتح</Button>
+            <Button Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Margin="5,0,5,0" Name="btnLoad">Open</Button>
         </Grid>
 
 
