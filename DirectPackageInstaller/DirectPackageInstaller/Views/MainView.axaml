@@ -6,7 +6,8 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="DirectPackageInstaller.Views.MainView"
              Foreground="White"
-             Background="#171C2C">
+             Background="#171C2C"
+             FontFamily="avares://DirectPackageInstaller/Assets/NotoSansArabic-Regular.ttf#Noto Sans Arabic">
   <Design.DataContext>
     <viewModels:MainViewModel />
   </Design.DataContext>
