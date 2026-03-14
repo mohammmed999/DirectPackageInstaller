@@ -8,11 +8,11 @@
         <local:ViewLocator/>
     </Application.DataTemplates>
 
-	    <Application.Styles>
+	<Application.Styles>
         <FluentTheme/>
         <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
         
-        <Style Selector="TextBlock">
+        <Style Selector="TextBlock, TextBox, Button, Label, ContentPresenter, AccessText">
             <Setter Property="FontFamily" Value="avares://DirectPackageInstaller/Assets/NotoSansArabic-Regular.ttf#Noto Sans Arabic" />
         </Style>
 
