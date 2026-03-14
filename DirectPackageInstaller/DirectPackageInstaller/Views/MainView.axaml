@@ -55,7 +55,7 @@
                         <TextBox Grid.Column="1" Text="{Binding PCIP, Mode=TwoWay}"></TextBox>
                     </StackPanel>
                 </MenuItem>
-                <MenuItem Header="خدمات Debrid">
+                <MenuItem Header="Debrid خدمات">
                     <MenuItem Header="_AllDebrid" Classes="NoChildFocus">
                         <StackPanel Orientation="Horizontal">
                             <Label Grid.Column="0">API Key</Label>
@@ -92,7 +92,7 @@
                 </MenuItem>
                 
                 <MenuItem Header="إعادة تشغيل السيرفر" Name="btnRestartServer"/>
-                <MenuItem Header="خروج|تم تعريب التطبيق من قبل/n فريق 4GAMER" Name="btnExit"/>
+                <MenuItem Header="تم تعريب التطبيق من قبل فريق 4GAMER" Name="btnExit"/>
             </MenuItem>
             <MenuItem Header="بكجات" IsVisible="False" Name="PackagesMenu">
                 <Separator></Separator>
