@@ -179,16 +179,16 @@ namespace DirectPackageInstaller.Views
                     RealDebridApiKey = null
                 };
 
-                var DHCPHint = "باستخدام برنامج الدايركت، يمكن لجهاز PS4/PS5 والكمبيوتر الخاص بك إجراء اتصال شبكة \"التوصيل والتشغيل\" (Plug And Play)، فقط قم بتفعيل خيار خادم DHCP وحدد محول الشبكة إذا لزم الأمر.";
-                var ProxyHint = "إذا كانت سرعة التحميل بطيئة جداً، يمكنك تجربة تفعيل ميزة \"التحميل عبر البروكسي\"، حيث تم إنشاء هذه الميزة خصيصاً لتحسين سرعة التحميل.";
-                var CompressedHint = "عند التحميل المباشر من الملفات المضغوطة، لا يمكنك استئناف التحميل بعد إغلاق برنامج الدايركت، ولكن قبل إغلاقه لا يزال بإمكانك إيقاف التحميل مؤقتاً واستئنافه من جهاز PS4.";
-                var AndroidHints = "ينصح بترك هاتفك موصولاً بالشاحن لتجنب أي مشاكل ناتجة عن تحسين استهلاك البطارية.\nإذا كنت تستخدم نظام MIUI، قم بتعطيل تحسين البطارية يدوياً من خصائص التطبيق.";
-                var FirewallHint = $"يستخدم برنامج الدايركت المنفذ {Installer.ServerPort} في ميزة \"التحميل عبر البروكسي\"، وربما ستحتاج إلى فتح المنافذ في جدار الحماية (Firewall) لديك.";
-                var ResumeHint = "روابط PKG المباشرة، سواء كنت تستخدم ميزة \"التحميل عبر البروكسي\" أو لا، يمكن استئنافها في أي وقت بمجرد اختيار 'استئناف' من قائمة التحميلات في جهاز PS4/PS5.";
-                var IndirectDownloadHint = "عند استخدام ميزة \"التحميل عبر البروكسي\"، لا يمكن لجهاز PS4/PS5 تحميل اللعبة بمفرده ويجب إبقاء برنامج DirectPackageInstaller مفتوحاً.";
-                var DirectDownloadHint = "عند استخدام وضع التحميل المباشر، يمكنك إيقاف تشغيل الكمبيوتر أو إغلاق البرنامج، وسيستمر جهاز PS4/PS5 في التحميل بمفرده.";
-                var WelcomeText = $"تم تعريب التطبيق من قبل محمد عقيل\nأهلاً بك أيها المستخدم، الهدف الأساسي من هذه الأداة هو تحميل ملفات PKG من الروابط المباشرة، ولكن لدينا بعض الميزات الثانوية الأخرى أيضاً.\n\nمن الجيد أن تعرف:\n{DirectDownloadHint}\n\n{IndirectDownloadHint}\n\n{ResumeHint}\n\n{(App.IsAndroid ? AndroidHints : FirewallHint)}\n\n{CompressedHint}\n\n{ProxyHint}\n\n{(App.IsWindows? DHCPHint  + \"\n\n\": \"\")}تم التطوير بواسطة marcussacana";
-               
+                var DHCPHint = "With DirectPackageInstaller your PS4/PS5 and PC can do a \"Plug And Play\" network connection just enable the DHCP Server option and select your network adapter if needed.";
+                var ProxyHint = "If your download speed is very slow, you can try enable the \"Proxy Downloads\" feature, since this feature has been created just to optimize the download speed.";
+                var CompressedHint = "When downloading directly from compressed files, you can't resume the download after the DirectPackageInstaller is closed, but before close the DirectPackageInstaller you still can pause and resume the download in your PS4.";
+                var AndroidHints = "Is recommended to keep your phone in charger to prevent any battery optimization problems.\nIf you're using MIUI, disable the battery optimizations manually in the app properties.";
+                var FirewallHint = $"The DirectPackageInstaller use the port {Installer.ServerPort} in the \"Proxy Downloads\" feature, maybe you will need to open the ports in your firewall.";
+                var ResumeHint = "Direct PKG urls, using the \"Proxy Download\" feature or not, can be resumed anytime by just selecting 'resume' in your PS4/PS5 download list.";
+                var IndirectDownloadHint = "When using the \"Proxy Downloads\" feature, the PS4/PS5 can't download the game alone and the DirectPackageInstaller must keep open.";
+                var DirectDownloadHint = "When using the direct download mode, you can turn off the computer or close the DirectPakcageInstaller and your PS4/PS5 will continue the download alone.";
+                var WelcomeText = $"Welcome. User, The focus of this tool is download PKGs from direct links but we have others minor features as well.\n\nGood to know:\n{DirectDownloadHint}\n\n{IndirectDownloadHint}\n\n{ResumeHint}\n\n{(App.IsAndroid ? AndroidHints : FirewallHint)}\n\n{CompressedHint}\n\n{ProxyHint}\n\n{(App.IsWindows? DHCPHint  + "\n\n": "")}Created by marcussacana";
+                
                 await MessageBox.ShowAsync(WelcomeText, "DirectPackageInstaller", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
@@ -688,7 +688,7 @@ namespace DirectPackageInstaller.Views
                     Parent.Activate();
                 }
 
-                btnLoad.Content = "Install";
+                btnLoad.Content = "ارسال";
             }
             catch (Exception ex)
             {
@@ -924,7 +924,7 @@ namespace DirectPackageInstaller.Views
             }
 
             var OriStatus = Status.Text;
-            btnLoad.Content = "Pushing...";
+            btnLoad.Content = "...جاري";
             PackagesMenu.IsEnabled = false;
             btnLoad.IsEnabled = false;
             tbURL.IsEnabled = false;
@@ -953,7 +953,7 @@ namespace DirectPackageInstaller.Views
                 PackagesMenu.IsEnabled = true;
                 btnLoad.IsEnabled = true;
                 tbURL.IsEnabled = true;
-                btnLoad.Content = "Install";
+                btnLoad.Content = "ارسال";
             }
         }
         
@@ -1181,7 +1181,7 @@ namespace DirectPackageInstaller.Views
         {
             InputType = Source.NONE;
 
-            btnLoad.Content = (string.IsNullOrWhiteSpace(Url) && !File.Exists(Url)) ? "فتح" : "تحميل";
+            btnLoad.Content = (string.IsNullOrWhiteSpace(Url) && !File.Exists(Url)) ? "اختيار" : "تحميل";
             
             Installer.CurrentFileList = null;
             LastForcedSource = null;
