@@ -92,7 +92,7 @@
                 </MenuItem>
                 
                 <MenuItem Header="إعادة تشغيل السيرفر" Name="btnRestartServer"/>
-                <MenuItem Header="تم تعريب التطبيق من قبل فريق 4GAMER" Name="btnExit"/>
+                <MenuItem Header="4GAMER تم تعريب التطبيق من قبل فريق" Name="btnExit"/>
             </MenuItem>
             <MenuItem Header="بكجات" IsVisible="False" Name="PackagesMenu">
                 <Separator></Separator>
