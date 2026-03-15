@@ -5,7 +5,8 @@
              xmlns:viewModels="clr-namespace:DirectPackageInstaller.ViewModels"
              mc:Ignorable="d" d:DesignWidth="380" d:DesignHeight="180"
              x:Class="DirectPackageInstaller.Views.MessageBoxView"
-             Background="#171C2C">
+             Background="#171C2C"
+             FontFamily="avares://DirectPackageInstaller/Assets/NotoSansArabic-Regular.ttf#Noto Sans Arabic">
     <UserControl.DataContext>
         <viewModels:DialogModel/>
     </UserControl.DataContext>
