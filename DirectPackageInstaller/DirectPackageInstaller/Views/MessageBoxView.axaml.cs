@@ -11,13 +11,13 @@ namespace DirectPackageInstaller.Views;
 
 public partial class MessageBoxView : UserControl
 { 
-    const string OK = "Ok"; 
-    const string Yes = "Yes"; 
-    const string No = "No"; 
-    const string Cancel = "Cancel"; 
-    const string Retry = "Retry"; 
-    const string Ignore = "Ignore";
-    const string Abort = "Abort";
+    const string OK = "موافق"; 
+    const string Yes = "نعم"; 
+    const string No = "لا"; 
+    const string Cancel = "اغلاق"; 
+    const string Retry = "إعادة المحاولة"; 
+    const string Ignore = "تجاهل";
+    const string Abort = "الغاء";
     private DialogModel? Model => (DialogModel?) DataContext;
     public MessageBoxView()
     {
