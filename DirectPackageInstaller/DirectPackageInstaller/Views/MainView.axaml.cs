@@ -919,7 +919,7 @@ namespace DirectPackageInstaller.Views
         {
             if (string.IsNullOrWhiteSpace(App.Config.PSIP) || string.IsNullOrWhiteSpace(App.Config.PCIP))
             {
-                await MessageBox.ShowAsync(Parent, "IP فشل العثور على عنوان الخاص بجهاز البلايستيشن\nIPفي قائمة يرجى كتابة عنوان الخيارات PS/PC لجهاز", "DirectPackageInstaller", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                await MessageBox.ShowAsync(Parent, "IP فشل العثور على عنوان الخاص بجهاز البلايستيشن\nIP يرجى كتابة عنوان في قائمة الخيارات PS/PC لجهاز", "DirectPackageInstaller", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
