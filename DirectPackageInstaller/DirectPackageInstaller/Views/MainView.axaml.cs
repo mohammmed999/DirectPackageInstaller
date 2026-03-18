@@ -710,7 +710,7 @@ namespace DirectPackageInstaller.Views
                 throw;
 #endif
 
-                await SetStatus("PKG فشل في فتح ملف");
+                await SetStatus(" PKG فشل في فتح ملف");
             }
             finally
             {
