@@ -313,7 +313,7 @@ namespace DirectPackageInstaller.Views
 
             if (DefaultAdapter == null) {
 
-                await SetStatus("Analyzing Network Adapters...");
+                await SetStatus("جاري فحص محولات الشبكة...");
 
                 var Adapters = await AdapterHelper.GetValidAdapters();
 
@@ -364,13 +364,13 @@ namespace DirectPackageInstaller.Views
                 DHCP = new DHCPHost();
                 DHCP.OnNewClient += OnClientFound();
                 DHCP.OnNewClient += async (a, b, c) => {
-                    await SetStatus($"Device Connected, IP: {a}");
+                    await SetStatus($"تم اتصال الجهاز, IP: {a}");
                 };
             }
 
             App.Config.EthernetAdapter = AdapterHelper.Adapter;
 
-            await SetStatus("Initializing DHCP...");
+            await SetStatus("...DHCP جاري تهيئة خادم");
 
             if (!await App.SetupStaticNetwork())
             {
@@ -427,7 +427,7 @@ namespace DirectPackageInstaller.Views
             {
                 if (DHCP != null)
                 {
-                    await SetStatus("Restoring Network Settings...");
+                    await SetStatus("جاري استعادة إعدادات الشبكة...");
 
                     DHCP.Stop();
                     await App.SetupDHCPNetwork();
@@ -646,12 +646,12 @@ namespace DirectPackageInstaller.Views
                 {
                     case CompressionFormat.RAR:
                         InputType |= Source.RAR;
-                        await SetStatus(LimitedFHost ? "Downloading... (It may take a while)" : "Decompressing...");
+                        await SetStatus(LimitedFHost ? "جاري التحميل... (قد يستغرق بعض الوقت) : "جاري فك الضغط...");
                         DataInfo = await Decompressor.UnrarPKG(PKGStream, SourcePackage, async (s) => await SetStatus(s),ForcedSource);
                         break;
                     case CompressionFormat.SevenZip:
                         InputType |= Source.SevenZip;
-                        await SetStatus(LimitedFHost ? "Downloading... (It may take a while)" : "Decompressing...");
+                        await SetStatus(LimitedFHost ? "جاري التحميل... (قد يستغرق بعض الوقت)" : "جاري فك الضغط...");
                         DataInfo = await Decompressor.Un7zPKG(PKGStream, SourcePackage,async (s) => await SetStatus(s), ForcedSource);
                         break;
                 }
@@ -670,7 +670,7 @@ namespace DirectPackageInstaller.Views
                     ListEntries(Installer.CurrentFileList = DataInfo?.PKGList ?? throw new AbortException("Failed to list compressed files"));
                 }
 
-                await SetStatus("Reading PKG...");
+                await SetStatus("...PKG جاري قراءة ملف");
 
                 var Info = Installer.CurrentPKG = PKGStream.GetPKGInfo() ?? throw new AbortException("Failed to read the PKG information");
 
@@ -723,13 +723,13 @@ namespace DirectPackageInstaller.Views
 
         private async Task<FileHostStream?> LoadUrl(string SourcePackage)
         {
-            await SetStatus("Analyzing Urls...");
+            await SetStatus("جاري فحص الروابط...");
 
             var UrlInfo = await URLAnalyzer.Analyze(SourcePackage, false);
 
             while (!UrlInfo.Ready && !UrlInfo.Failed)
             {
-                await SetStatus($"Analyzing Urls... {UrlInfo.Progress}");
+                await SetStatus($"جاري فحص الروابط... {UrlInfo.Progress}");
                 await Task.Delay(100);
             }
 
